@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+<div class="mainContainerPage">
+<div class="row col-md-11 mx-auto bg-light">  <!--row 2nd  section start-->
+    <div class="col-md-9">
+      {% for i in data %}
+      {% if forloop.counter == 1 %}
+      <div class="mt-2 p3 shadow"><!--customer detail-->
+        <h5>Customer detail</h5>
+        <p><strong>Customer name:</strong>{{i.uid.username}}</p>
+        <p><strong>Customer Email:</strong>{{i.uid.email}}</p>
+        <p><strong>Delivery Address:</strong>{{i.house_no}},{{i.lane}},{{i.area}},{{i.city}},{{i.pin}}</p>
+      </div><!--customer detail end-->
+      {% endif %}
+      {% endfor %}
+      <div class="mt-2 btn-danger">
+        <h3>Order Summary</h3>
+      </div>
+      <div class="mt-2 p-3 shadow "><!--product detail-->
+        {% for i in data %}
+        <div class="row mt-2">
+          <div class="col-md-7 ">
+              <img class="card-img-top" src="{{i.pid.image.url}}" alt="Card image cap" height="350" >
+          </div>
+          <div class="col-md-5">
+              <p> <strong>Product Name:</strong> {{i.pid.name}} </p>
+              <p> <strong>Product:</strong> {{i.pid.pdetail}} </p>
+              {% if i.pid.cat == 1 %}
+              <h5 ><strong>category:</strong>Mobile</h5>
+            {% elif i.pid.cat == 2 %}
+              <h5 ><strong>category:</strong>Shoes</h5>
+            {% else %}
+              <h5 ><strong>category:</strong>Cloth</h5>
+            {% endif %}
+              <p> <strong>Price(per item):</strong> {{i.pid.price}}</p>
+              <p> <strong>Quantity:</strong> {{i.qty}}</p>
+              <p> <strong>Total Price:</strong>Rs.{{i.amt}}</p>
+          </div>
+      </div>
+      {% endfor %}
+      </div><!--product detail end -->
+    </div>
+    <div class="col-md-3"><!--price detail-->
+      <p><strong>Price({{n}} items):</strong>Rs.{{total}}</p> 
+      <p><strong>Total amount:</strong>Rs.{{total}}</p> 
+      
+
+      <p><a href="/makepayment"><button  type="submit" class="btn btn-primary">Make Payment</button></a></p>
+    </div><!--price detail end-->
+</div><!--row 2nd section end-->
+</div>
+{% endblock 'main' %}

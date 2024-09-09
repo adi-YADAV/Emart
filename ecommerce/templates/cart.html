@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+<div class="mainContainerPage">
+
+  <div class="row col-md-11 mx-auto bg-light">  <!--row 2nd section start-->
+    <div class="col-md-9">
+      {% for i in data %}
+      {% if forloop.counter == 1 %}
+      <div class="mt-2 p3 shadow"><!--customer detail-->
+        <h5>Customer detail</h5>
+        <p><strong>Customer name:</strong>{{i.uid.username}}</p>
+        <p><strong>Customer Email:</strong>{{i.uid.email}}</p>
+      </div><!--customer detail end-->
+      {% endif %}
+      {% endfor %}
+      <div class="mt-2 p-3 shadow"><!--product detail-->
+        {% for i in data %}
+        <div class="row mt-2">
+          <div class="col-md-7">
+            <img class="card-img-top" src="{{i.pid.image.url}}" alt="Card image cap" height="350">
+          </div>
+          <div class="col-md-5">
+            <p><strong>Product Name:</strong> {{i.pid.name}}</p>
+            <p><strong>Product:</strong> {{i.pid.pdetail}}</p>
+            {% if i.pid.cat == 1 %}
+            <h5><strong>Category:</strong>Mobile</h5>
+            {% elif i.pid.cat == 2 %}
+            <h5><strong>Category:</strong>Shoes</h5>
+            {% else %}
+            <h5><strong>Category:</strong>Cloth</h5>
+            {% endif %}
+            <p><strong>Price:</strong> {{i.pid.price}}</p>
+            <p>
+              <a href="/updateqty/0/{{i.id}}"><button class="btn btn-danger">-</button></a>
+              <input type="text" style="width: 50px;" value="{{i.qty}}">
+              <a href="/updateqty/1/{{i.id}}"><button class="btn btn-danger">+</button></a>
+            </p>
+            <p>
+              <a href="/remove/{{i.id}}"><button type="button" class="btn btn-success">Remove from cart</button></a>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div><!--product detail end-->
+    </div>
+
+    <div class="col-md-3"><!--price detail-->
+      <p><strong>Price({{n}} items):</strong>Rs.{{total}}</p>
+      <p><strong>Total amount:</strong>Rs.{{total}}</p>
+      <form method="post" action="/placeorder" class="mainContainerPage">
+        {% csrf_token %}
+        <div class="col-sm-10" style="padding-left: 4%;">
+          <h5>Del ivery Address</h5>
+          <label>House No.</label>
+          <input type="text" class="form-control" placeholder="House no./Flat no." name="hno" required>
+          <label>Lane</label>
+          <input type="text" class="form-control" placeholder="lane name and no." name="lane" required>
+          <label>Area</label>
+          <input type="text" class="form-control" placeholder="area" name="area" required>
+          <label>City</label>
+          <input type="text" class="form-control" placeholder="city" name="city" required>
+          <label>Pin Code</label>
+          <input type="text" class="form-control" placeholder="Pin code" name="pin" required>
+          <br>
+          <br>
+          <p><button type="submit" class="btn btn-primary">Place Order</button></p>
+        </div><br><br>
+        
+      </form>
+    </div><!--price detail end-->
+
+  </div><!--row 2nd section end-->
+
+</div>
+
+{% endblock 'main' %}

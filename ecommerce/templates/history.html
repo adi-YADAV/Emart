@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+
+<div class="mainContainerPage">
+<div style="display: flex;">
+
+    
+    {% for i in data %}
+    <div class="col-md-3 mb-3" style="padding-left: 3%;padding-top: 2%;"><!--Product 1-->
+        <div class="card" style="width:100%;">
+            <img src="{{i.pid.image.url}}" class="card-img-top" alt="..." height="150">
+            <div class="card-body">
+                <h5 class="card-title">{{i.pid.name}}</h5>
+                <p class="card-text"><b>Price:</b>{{i.pid.price}}</p>
+                <p><strong>Delivery Address:</strong>{{i.house_no}},{{i.lane}},{{i.area}},{{i.city}},{{i.pin}}</p>
+            </div>
+        </div>                  
+    </div>
+    {% endfor %}
+</div>
+
+</div>
+  
+  
+{% endblock 'main' %}

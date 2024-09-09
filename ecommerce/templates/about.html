@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href=" {% static 'CSS/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+      a{
+        text-decoration: none;
+      }
+      
+
+    </style>
+  </head>
+<body>
+<div class="mainContainerPage">
+    <div class="container col-md-12 mx-auto">
+        <div class="row mt-3"><!--row 1 start or header section start-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-11 mx-auto">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="/product">E-mart</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/product">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="form.html">Login</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+        </div><!--row 1 end header section end-->
+
+
+
+
+        <div class="row pt-2">   <!--contact page start-->
+
+            <div class="col-md-9 mx-auto bg-light hover shadow-lg p-3 mb-5 bg-white rounded" style="text-align: center; border-radius: 20px;">
+                <h3>About us</h3>
+                <p>
+                    As of my last update in January 2022, the top e-commerce site in India is typically considered to be Flipkart. Established in 2007, Flipkart has emerged as a pioneer in the Indian e-commerce landscape, offering a vast array of products ranging from electronics and fashion to groceries and furniture. Acquired by Walmart in 2018, Flipkart has continued to expand its market reach and enhance its services, including innovative features such as same-day delivery and diverse payment options, catering to the diverse needs of Indian consumers. Its strategic partnerships, extensive product selection, and customer-centric approach have solidified its position as the leading e-commerce platform in India, serving millions of customers across the country.
+                </p>
+
+
+
+            </div>
+          
+          
+          </div> 
+
+
+       
+        
+
+        <div class="row col-md-11 mx-auto bg-light p-3 mt-3">  <!-- 3nd row start or main section start-->
+          <div class="col-md-4">
+            <h5>Adress</h5> <hr>
+            22-B,1<sup>st</sup> floor,Rainbow plaza, <br>
+            Shivar garden chauk,Pimple saudagar,<br>
+            Pune 411 027, <br>
+            Maharastra <br>
+
+          </div>
+
+
+          <div class="col-md-4">
+            <h5>Quick Links</h5><hr>
+            <h4> <a href="index.html" class="underline"> home</a>  </h4>
+            <h4> <a href="#" class="underline"> About</a>   </h4>
+            <h4> <a href="#" class="underline"> Contact</a>  </h4>
+            
+          </div>
+          <div class="col-md-4">
+            <h5>Social media</h5><hr>
+            
+            <span><h5><a href=""><i class="bi bi-linkedin"></i></a></h5></i></span>
+            <span><h5><a href=""><i class="bi bi-twitter"></i></a></h5></span>
+            <span><h5><a href=""><i class="bi bi-instagram"></i></a></h5></span>
+            <span><h5><a href=""><i class="bi bi-facebook"></i></a></h5></span>
+            
+            
+          </div>
+          
+        </div> <!-- 3nd row end or main section end-->
+        
+
+
+
+
+    </div>
+    <script src="{% static 'JS/bootstrap.min.js' %}"></script>
+    <script src="{% static 'JS/popper.js' %}"></script> 
+</div>
+</body>
+</html>

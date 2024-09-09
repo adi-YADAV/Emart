@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#headerMainContainer {
+    background-color: black;
+}
+
+.navbar-brand, .nav-link, .headerButton {
+    color: #ffddca !important;
+}
+
+.headerButton {
+    margin-top: 5px;
+    background-color: black;
+    color: #ffddca;
+    border: 2px solid #ffddca;
+    border-radius: 8px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+     
+}
+
+.headerButton:hover {
+    background-color: #ffddca;
+    color: whitesmoke;
+    transition: 0.5s;
+}
+
+.mainContainerPage {
+    background-color: #fdf5e6;
+}
